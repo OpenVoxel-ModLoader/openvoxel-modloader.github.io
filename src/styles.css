@@ -56,3 +56,14 @@ dt { color: var(--muted); }
 .form { display: flex; flex-direction: column; gap: 14px; }
 .form label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
 @media (max-width: 600px) { .hero h1 { font-size: 32px; } .top { padding: 12px 16px; } }
+
+/* downloads */
+.downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 36px; }
+.download h2 { margin: 0 0 6px; }
+.download p { margin: 6px 0 12px; color: var(--text); }
+.download ol { margin: 14px 0 6px; padding-left: 20px; color: var(--text); line-height: 1.6; }
+.button.big { display: block; text-align: center; font-size: 17px; padding: 14px 18px; }
+.button.big small { display: block; font-weight: 400; font-size: 12px; opacity: .8; margin-top: 2px; }
+.download > a.small { display: inline-block; margin: 8px 0 0; }
+.features { margin: 10px 0 30px; }
+.features .card p { margin: 6px 0 0; }

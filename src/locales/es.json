@@ -4,9 +4,6 @@
   "nav.mods": "Mods",
   "nav.tutorials": "Tutoriales",
   "nav.docs": "Docs",
-  "home.get": "Consigue el loader",
-  "home.getText": "Descarga ModLoader-v1.0.0-vgame-0.0.8-client.jar, pon la carpeta modloader-client junto al launcher, ejecuta launch.bat / launch.sh y elige la versión 0.0.8-Debug en el launcher.",
-  "home.latest": "Últimos mods",
   "home.start": "Empieza a crear mods",
   "mods.search": "Buscar mods",
   "mods.empty": "No se encontraron mods.",
@@ -20,5 +17,58 @@
   "content.empty": "Todavía no hay nada aquí.",
   "content.read": "Leer",
   "lang": "Idioma",
-  "footer": "OpenVoxel ModLoader es un proyecto comunitario. Sin relación con open-voxel.net."
+  "footer": "OpenVoxel ModLoader es un proyecto comunitario. Sin relación con open-voxel.net.",
+  "home.version": "Versión actual: ModLoader 1.0.0 para OpenVoxel 0.0.8 (versión del launcher 0.0.8-Debug). Windows y Linux.",
+  "home.download.zip": "Descargar ZIP",
+  "home.download.jarOnly": "solo el jar (para una instalación existente)",
+  "home.client.title": "Cliente",
+  "home.client.text": "Juega a OpenVoxel con menús estilo Minecraft, Supervivencia/Creativo, crafteo, cofres, skins, colores en el chat y mods, sin tocar el juego.",
+  "home.client.steps": [
+    "Descomprime junto a OpenVoxelLauncher.exe (o define OPENVOXEL_HOME).",
+    "Ejecuta launch.bat / launch.ps1 (Windows) o launch.sh (Linux).",
+    "En el launcher elige la versión 0.0.8-Debug y pulsa PLAY.",
+    "Copia tus mods en ModLoader-Client/instance/mods."
+  ],
+  "home.client.contains": "El ZIP incluye: el jar del loader, scripts de arranque para Windows/Linux y las carpetas de la instancia (mods, config, lang, resourcepacks, sounds, music).",
+  "home.server.title": "Servidor",
+  "home.server.text": "Ejecuta el servidor dedicado oficial con consola interactiva, chat/comandos con colores y plugins desde la carpeta mods/.",
+  "home.server.steps": [
+    "Descomprime donde quieras.",
+    "Descarga openvoxel-server-0.0.8-SNAPSHOT.jar de open-voxel.net en server/openvoxel-server.jar.",
+    "Pon plugins en mods/ (p. ej. HungerGames.jar).",
+    "Ejecuta start.bat / start.ps1 (Windows) o start.sh (Linux)."
+  ],
+  "home.server.contains": "El ZIP incluye: el jar del plugin núcleo, scripts de arranque para Windows/Linux, server.properties.yml y las carpetas mods/, plugins/, server/.",
+  "home.features.title": "Qué incluye",
+  "home.features.items": [
+    {
+      "title": "Supervivencia y Creativo",
+      "text": "Hambre, armadura, herramientas con tiempos de minado, drops, daño de caída; vuelo creativo e inventario creativo con pestañas."
+    },
+    {
+      "title": "Crafteo",
+      "text": "Rejilla 2x2, mesa de crafteo, cofres y camas; recetas de herramientas, armaduras, antorchas, losas, escaleras… los mods pueden añadir más."
+    },
+    {
+      "title": "Skins y cosméticos",
+      "text": "Skins de Minecraft 64x64 / 64x32 / 128x128 con ambas capas, Steve/Alex, capas y élitros, subida de skin a open-voxel.net."
+    },
+    {
+      "title": "Calidad de vida",
+      "text": "Pantalla F3, controles remapeables, colores/historial/Tab en el chat, paquetes de texturas, idiomas, sonidos y música."
+    },
+    {
+      "title": "API de mods",
+      "text": "Comandos, traducciones, configuración, objetos, recetas, dibujo en el HUD y eventos del motor con una API Java pequeña."
+    },
+    {
+      "title": "Plugins de servidor",
+      "text": "Consola, colores y comandos de utilidad en el servidor dedicado oficial; los plugins usan la API oficial."
+    }
+  ],
+  "home.links.firstMod": "Tu primer mod",
+  "home.links.api": "Referencia de la API",
+  "home.links.serverPlugin": "Tutorial de plugin de servidor",
+  "home.links.template": "Plantilla de mod (Gradle)",
+  "home.examples": "Mods de ejemplo"
 }
