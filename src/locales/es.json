@@ -5,7 +5,7 @@
   "nav.tutorials": "Tutoriales",
   "nav.docs": "Docs",
   "home.get": "Consigue el loader",
-  "home.getText": "Descarga ModLoader-v1.0.0-vgame-0.8.0-client.jar, pon la carpeta modloader-client junto al launcher, ejecuta launch.bat / launch.sh y elige la versión 0.0.8-Debug en el launcher.",
+  "home.getText": "Descarga ModLoader-v1.0.0-vgame-0.0.8-client.jar, pon la carpeta modloader-client junto al launcher, ejecuta launch.bat / launch.sh y elige la versión 0.0.8-Debug en el launcher.",
   "home.latest": "Últimos mods",
   "home.start": "Empieza a crear mods",
   "mods.search": "Buscar mods",

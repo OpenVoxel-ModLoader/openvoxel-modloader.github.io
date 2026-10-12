@@ -5,7 +5,7 @@
   "nav.tutorials": "Tutorials",
   "nav.docs": "Docs",
   "home.get": "Get the loader",
-  "home.getText": "Download ModLoader-v1.0.0-vgame-0.8.0-client.jar, put the modloader-client folder next to the launcher, run launch.bat / launch.sh and pick version 0.0.8-Debug in the launcher.",
+  "home.getText": "Download ModLoader-v1.0.0-vgame-0.0.8-client.jar, put the modloader-client folder next to the launcher, run launch.bat / launch.sh and pick version 0.0.8-Debug in the launcher.",
   "home.latest": "Latest mods",
   "home.start": "Start modding",
   "mods.search": "Search mods",

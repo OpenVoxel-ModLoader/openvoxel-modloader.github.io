@@ -9,7 +9,7 @@
     "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/latest",
     "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
     "updatedAt": "2026-10-12T00:00:00.000Z",
-    "readme": "# ModLoader client\n\nDownload `ModLoader-v1.0.0-vgame-0.8.0-client.jar`, put the repo folder next to the launcher and run `launch.bat` / `launch.sh`. In the launcher select **0.0.8-Debug**."
+    "readme": "# ModLoader client\n\nDownload `ModLoader-v1.0.0-vgame-0.0.8-client.jar`, put the repo folder next to the launcher and run `launch.bat` / `launch.sh`. In the launcher select **0.0.8-Debug**."
   },
   {
     "id": "modloader-server",
@@ -21,7 +21,7 @@
     "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/latest",
     "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Server",
     "updatedAt": "2026-10-12T00:00:00.000Z",
-    "readme": "# ModLoader server\n\nDownload `ModLoader-v1.0.0-vgame-0.8.0-server.jar` into `dist/`, copy the official server jar to `server/openvoxel-server.jar` and run `start.bat` / `start.sh`."
+    "readme": "# ModLoader server\n\nDownload `ModLoader-v1.0.0-vgame-0.0.8-server.jar` into `dist/`, copy the official server jar to `server/openvoxel-server.jar` and run `start.bat` / `start.sh`."
   },
   {
     "id": "hello-mod",
