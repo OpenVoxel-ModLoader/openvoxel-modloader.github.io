@@ -30,7 +30,7 @@
     "summary": "Example client mod: chat greeting, /hello command and translations.",
     "author": "OpenVoxel-ModLoader",
     "tags": ["example", "client"],
-    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/main/hello-mod",
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/master/hello-mod",
     "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
     "updatedAt": "2026-10-12T00:00:00.000Z",
     "readme": "Source in `examples/hello-mod`; build with `examples/build-all.bat` or `.sh`."
@@ -42,7 +42,7 @@
     "summary": "Example client mod: clock, FPS and position drawn on the HUD every frame.",
     "author": "OpenVoxel-ModLoader",
     "tags": ["example", "client", "hud"],
-    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/main/hud-clock",
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/master/hud-clock",
     "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
     "updatedAt": "2026-10-12T00:00:00.000Z"
   },
@@ -53,7 +53,7 @@
     "summary": "Example client mod: listens to click events and counts broken blocks (/broken).",
     "author": "OpenVoxel-ModLoader",
     "tags": ["example", "client", "events"],
-    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/main/block-counter",
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/master/block-counter",
     "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
     "updatedAt": "2026-10-12T00:00:00.000Z"
   },

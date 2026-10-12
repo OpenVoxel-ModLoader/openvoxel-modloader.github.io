@@ -26,5 +26,5 @@ pnpm build      # dist/
 ```
 
 Vite + React + i18next with a hash router (no server rewrites needed on Pages).
-`.github/workflows/pages.yml` deploys on every push to `main`; enable
+`.github/workflows/pages.yml` deploys on every push to `master`; enable
 *Settings → Pages → Source: GitHub Actions* once.
