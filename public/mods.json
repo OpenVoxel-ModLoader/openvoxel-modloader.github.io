@@ -1,0 +1,71 @@
+[
+  {
+    "id": "modloader-client",
+    "name": "OpenVoxel ModLoader (client)",
+    "version": "1.0.0",
+    "summary": "The loader itself: Minecraft-style UI, survival, crafting, skins, mods API.",
+    "author": "OpenVoxel-ModLoader",
+    "tags": ["loader", "client"],
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/latest",
+    "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
+    "updatedAt": "2026-10-12T00:00:00.000Z",
+    "readme": "# ModLoader client\n\nDownload `ModLoader-v1.0.0-vgame-0.8.0-client.jar`, put the repo folder next to the launcher and run `launch.bat` / `launch.sh`. In the launcher select **0.0.8-Debug**."
+  },
+  {
+    "id": "modloader-server",
+    "name": "OpenVoxel ModLoader (server)",
+    "version": "1.0.0",
+    "summary": "Server core plugin: interactive console, colors, utility commands; runs the official dedicated server.",
+    "author": "OpenVoxel-ModLoader",
+    "tags": ["loader", "server"],
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/latest",
+    "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Server",
+    "updatedAt": "2026-10-12T00:00:00.000Z",
+    "readme": "# ModLoader server\n\nDownload `ModLoader-v1.0.0-vgame-0.8.0-server.jar` into `dist/`, copy the official server jar to `server/openvoxel-server.jar` and run `start.bat` / `start.sh`."
+  },
+  {
+    "id": "hello-mod",
+    "name": "Hello Mod",
+    "version": "1.0.0",
+    "summary": "Example client mod: chat greeting, /hello command and translations.",
+    "author": "OpenVoxel-ModLoader",
+    "tags": ["example", "client"],
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/main/hello-mod",
+    "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
+    "updatedAt": "2026-10-12T00:00:00.000Z",
+    "readme": "Source in `examples/hello-mod`; build with `examples/build-all.bat` or `.sh`."
+  },
+  {
+    "id": "hud-clock",
+    "name": "HUD Clock",
+    "version": "1.0.0",
+    "summary": "Example client mod: clock, FPS and position drawn on the HUD every frame.",
+    "author": "OpenVoxel-ModLoader",
+    "tags": ["example", "client", "hud"],
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/main/hud-clock",
+    "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
+    "updatedAt": "2026-10-12T00:00:00.000Z"
+  },
+  {
+    "id": "block-counter",
+    "name": "Block Counter",
+    "version": "1.0.0",
+    "summary": "Example client mod: listens to click events and counts broken blocks (/broken).",
+    "author": "OpenVoxel-ModLoader",
+    "tags": ["example", "client", "events"],
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/main/block-counter",
+    "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
+    "updatedAt": "2026-10-12T00:00:00.000Z"
+  },
+  {
+    "id": "hungergames",
+    "name": "Hunger Games",
+    "version": "0.1.0",
+    "summary": "Example server plugin: /hg start spreads players, countdown, grace period, last one standing wins.",
+    "author": "OpenVoxel-ModLoader",
+    "tags": ["example", "server", "minigame"],
+    "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-Server-Example",
+    "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Server",
+    "updatedAt": "2026-10-12T00:00:00.000Z"
+  }
+]
