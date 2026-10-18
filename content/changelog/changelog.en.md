@@ -6,6 +6,17 @@ order: 9
 
 # Changelog
 
+## Next — 1.1.0-pre3 (in development)
+
+**Mods**
+- **Native blocks**: `ctx.nativeBlock("mymod:ruby_block")...register()` adds real engine block types (Fabric/Forge-style registration): textures, light, translucency, gravity, hardness and tools; deterministic type ids shared by client and server.
+- The ModLoader agent runs on dedicated servers (`ModLoader-Server/agent/`) so servers know mod blocks; `ctx.isServer()`.
+- `registerRecipe` / `registerBlock` are safe in `onLoad` (applied when the game is ready).
+- Complete Javadoc for the public API, published at [javadoc/client](javadoc/client/index.html) and [javadoc/server](javadoc/server/index.html).
+
+**Server**
+- Start scripts load the agent from `agent/` and only deploy jars with `plugin.yml` from `mods/` to `plugins/`.
+
 ## 1.1.0-pre2 — 2026-10-18 (client + server, beta)
 
 Downloads: [client ZIP](https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre2/ModLoader-Client-v1.1.0-pre2-vgame-0.0.8.zip) · [server ZIP](https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/download/v1.1.0-pre2/ModLoader-Server-v1.1.0-pre2-vgame-0.0.8.zip). Update the client and the server together: game modes, permissions and the tab list need both.

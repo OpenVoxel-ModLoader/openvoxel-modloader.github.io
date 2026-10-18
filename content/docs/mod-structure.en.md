@@ -1,7 +1,7 @@
 ---
 title: Mod project structure & build
 summary: Folder layout, properties file, resources, building with Gradle or plain javac.
-order: 3
+order: 4
 ---
 
 # Mod project structure & build

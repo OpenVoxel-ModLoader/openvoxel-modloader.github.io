@@ -1,7 +1,7 @@
 ---
 title: Permisos y administración del servidor
 summary: Operadores, nodos de permiso, modos de juego, tab list, whitelist y warps en un servidor ModLoader.
-order: 5
+order: 6
 ---
 
 # Permisos y administración del servidor

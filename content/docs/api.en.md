@@ -6,6 +6,8 @@ order: 2
 
 # Mod API reference
 
+> Full generated reference: **[Javadoc (client API)](javadoc/client/index.html)** · [server API](javadoc/server/index.html). This page is the guided tour.
+
 A client mod is a JAR in `instance/mods` containing `openvoxel.mod.properties` and a class that
 implements `com.happyuky7.openvoxelmoding.loader.ClientMod`. The loader creates one instance per
 mod and passes the shared `ModContext` to every hook.
@@ -88,6 +90,20 @@ Built-in items: `wooden|stone|iron|golden|diamond` × `_sword|_pickaxe|_shovel|_
 `leather|iron|golden|diamond` × `_helmet|_chestplate|_leggings|_boots`, `apple`, `golden_apple`,
 `bread`, `cooked_beef`, `stick`, `coal`, `copper_ingot`, `iron_ingot`, `gold_ingot`, `diamond`,
 `emerald`, `redstone`, `lapis`, `crafting_table`, `chest`, `bed`.
+
+### Native blocks (since 1.1.0-pre3)
+
+`ctx.nativeBlock("mymod:ruby_block")...register()` adds a **real engine block type** (Fabric/Forge-style
+registration). Call it in `onLoad`. See [Native blocks](#/docs/native-blocks) and
+[NativeBlocks.Builder](javadoc/client/com/happyuky7/openvoxelmoding/loader/NativeBlocks.Builder.html).
+
+| Method | Effect |
+|--------|--------|
+| `nativeBlock(id)` | Starts a block definition; finish with `register()`. |
+| `isServer()` | True when the mod runs inside a dedicated server through the ModLoader agent (only `onLoad` runs there). |
+
+`registerRecipe` and `registerBlock` are safe in `onLoad`: they are applied once the game is ready, so
+they never close native block registration early.
 
 ### Blocks with ids (since 1.1.0)
 

@@ -1,7 +1,7 @@
 ---
 title: Server permissions & administration
 summary: Operators, permission nodes, game modes, tab list, whitelist and warps on a ModLoader server.
-order: 5
+order: 6
 ---
 
 # Server permissions & administration

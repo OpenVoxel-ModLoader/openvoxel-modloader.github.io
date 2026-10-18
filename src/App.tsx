@@ -82,6 +82,8 @@ export default function App() {
             <h4>{t('footer.developers')}</h4>
             <Link to="/tutorials/first-mod">{t('footer.firstMod')}</Link>
             <Link to="/docs/api">{t('footer.api')}</Link>
+            <a href={`${import.meta.env.BASE_URL}javadoc/client/index.html`} target="_blank" rel="noreferrer">Javadoc</a>
+            <Link to="/docs/native-blocks">{t('footer.nativeBlocks')}</Link>
             <Link to="/tutorials/server-plugin">{t('footer.plugins')}</Link>
             <Link to="/servers">{t('nav.servers')}</Link>
             <a href={SITE.template} target="_blank" rel="noreferrer">{t('footer.template')}</a>

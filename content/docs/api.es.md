@@ -6,6 +6,8 @@ order: 2
 
 # Referencia de la API de mods
 
+> Referencia generada completa: **[Javadoc (API de cliente)](javadoc/client/index.html)** · [API de servidor](javadoc/server/index.html). Esta página es la visita guiada.
+
 Un mod de cliente es un JAR en `instance/mods` con `openvoxel.mod.properties` y una clase que
 implementa `com.happyuky7.openvoxelmoding.loader.ClientMod`. El loader crea una instancia por mod y
 pasa el `ModContext` compartido a cada hook.
@@ -87,6 +89,20 @@ Objetos incluidos: `wooden|stone|iron|golden|diamond` × `_sword|_pickaxe|_shove
 `leather|iron|golden|diamond` × `_helmet|_chestplate|_leggings|_boots`, `apple`, `golden_apple`,
 `bread`, `cooked_beef`, `stick`, `coal`, `copper_ingot`, `iron_ingot`, `gold_ingot`, `diamond`,
 `emerald`, `redstone`, `lapis`, `crafting_table`, `chest`, `bed`.
+
+### Bloques nativos (desde la 1.1.0-pre3)
+
+`ctx.nativeBlock("mimod:bloque_rubi")...register()` añade un **tipo de bloque real del motor** (registro al
+estilo Fabric/Forge). Llámalo en `onLoad`. Ver [Bloques nativos](#/docs/native-blocks) y
+[NativeBlocks.Builder](javadoc/client/com/happyuky7/openvoxelmoding/loader/NativeBlocks.Builder.html).
+
+| Método | Efecto |
+|--------|--------|
+| `nativeBlock(id)` | Empieza la definición de un bloque; termina con `register()`. |
+| `isServer()` | True cuando el mod corre dentro de un servidor dedicado mediante el agente ModLoader (allí solo se ejecuta `onLoad`). |
+
+`registerRecipe` y `registerBlock` se pueden usar en `onLoad`: se aplican cuando el juego está listo, así
+nunca cierran antes de tiempo el registro de bloques nativos.
 
 ### Bloques con id (desde la 1.1.0)
 

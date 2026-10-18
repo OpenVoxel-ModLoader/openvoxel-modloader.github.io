@@ -1,7 +1,7 @@
 ---
 title: Server plugins API
 summary: The official plugin API used by ModLoader-Server and server-side mods.
-order: 4
+order: 5
 ---
 
 # Server plugins

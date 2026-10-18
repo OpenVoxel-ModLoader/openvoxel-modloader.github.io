@@ -6,6 +6,17 @@ order: 9
 
 # Historial de cambios
 
+## Próxima — 1.1.0-pre3 (en desarrollo)
+
+**Mods**
+- **Bloques nativos**: `ctx.nativeBlock("mimod:bloque_rubi")...register()` añade tipos de bloque reales del motor (registro al estilo Fabric/Forge): texturas, luz, translucidez, gravedad, dureza y herramientas; ids deterministas compartidos por cliente y servidor.
+- El agente ModLoader funciona en servidores dedicados (`ModLoader-Server/agent/`) para que conozcan los bloques de los mods; `ctx.isServer()`.
+- `registerRecipe` / `registerBlock` se pueden usar en `onLoad` (se aplican cuando el juego está listo).
+- Javadoc completo de la API pública, publicado en [javadoc/client](javadoc/client/index.html) y [javadoc/server](javadoc/server/index.html).
+
+**Servidor**
+- Los scripts de arranque cargan el agente desde `agent/` y solo despliegan a `plugins/` los jars de `mods/` con `plugin.yml`.
+
 ## 1.1.0-pre2 — 2026-10-18 (cliente + servidor, beta)
 
 Descargas: [ZIP del cliente](https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre2/ModLoader-Client-v1.1.0-pre2-vgame-0.0.8.zip) · [ZIP del servidor](https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/download/v1.1.0-pre2/ModLoader-Server-v1.1.0-pre2-vgame-0.0.8.zip). Actualiza cliente y servidor a la vez: los modos de juego, los permisos y la tab list necesitan ambos.

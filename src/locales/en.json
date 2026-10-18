@@ -267,5 +267,8 @@
     "Synced chest contents and ModLoader blocks for everyone",
     "Native blocks registered on client and server",
     "A proxy (BungeeCord/Velocity style) to link several servers"
-  ]
+  ],
+  "content.javadocClient": "Client mod API",
+  "content.javadocServer": "Server plugin API",
+  "footer.nativeBlocks": "Native blocks"
 }

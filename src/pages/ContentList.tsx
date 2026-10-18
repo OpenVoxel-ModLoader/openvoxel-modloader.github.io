@@ -15,6 +15,16 @@ export default function ContentList({ kind }: { kind: 'docs' | 'tutorials' }) {
         <h1>{t(kind === 'docs' ? 'nav.docs' : 'nav.tutorials')}</h1>
         <p className="muted">{t(kind === 'docs' ? 'content.docsSub' : 'content.tutorialsSub')}</p>
       </header>
+      {kind === 'docs' && (
+        <div className="javadoc-row">
+          <a className="javadoc-card" href={`${import.meta.env.BASE_URL}javadoc/client/index.html`} target="_blank" rel="noreferrer">
+            <span className="jd-badge">Javadoc</span><strong>{t('content.javadocClient')}</strong><span className="muted small">ClientMod · ModContext · NativeBlocks · ModConfig · Lang</span>
+          </a>
+          <a className="javadoc-card" href={`${import.meta.env.BASE_URL}javadoc/server/index.html`} target="_blank" rel="noreferrer">
+            <span className="jd-badge">Javadoc</span><strong>{t('content.javadocServer')}</strong><span className="muted small">Permissions</span>
+          </a>
+        </div>
+      )}
       {docs.length === 0 && <p className="muted">{t('content.empty')}</p>}
       <div className="doc-grid">
         {docs.map((d, i) => (

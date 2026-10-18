@@ -267,5 +267,8 @@
     "Contenido de cofres y bloques ModLoader sincronizados para todos",
     "Bloques nativos registrados en cliente y servidor",
     "Un proxy (estilo BungeeCord/Velocity) para unir varios servidores"
-  ]
+  ],
+  "content.javadocClient": "API de mods de cliente",
+  "content.javadocServer": "API de plugins de servidor",
+  "footer.nativeBlocks": "Bloques nativos"
 }

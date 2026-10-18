@@ -1,7 +1,7 @@
 ---
 title: Estructura y compilación de un mod
 summary: Carpetas, archivo de propiedades, recursos, compilar con Gradle o javac.
-order: 3
+order: 4
 ---
 
 # Estructura y compilación de un mod

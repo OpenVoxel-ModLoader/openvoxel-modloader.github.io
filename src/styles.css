@@ -286,3 +286,8 @@ dt { color: var(--muted); } dd { margin: 0; }
 .servers-split .steps { margin-top: 10px; }
 .page > section > h2 { font-size: 24px; margin-top: 36px; }
 .page-head .actions { margin-top: 18px; }
+
+.javadoc-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-bottom: 22px; }
+.javadoc-card { display: flex; flex-direction: column; gap: 4px; padding: 18px; border-radius: var(--radius); border: 1px solid var(--border-2); background: linear-gradient(135deg, rgba(167,123,240,.10), rgba(78,201,245,.06)); color: var(--text); }
+.javadoc-card:hover { color: var(--text); border-color: var(--purple); }
+.jd-badge { align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--purple); border: 1px solid rgba(167,123,240,.4); border-radius: 999px; padding: 1px 10px; }
