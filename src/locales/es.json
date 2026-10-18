@@ -69,14 +69,14 @@
   "home.code.api": "Referencia de la API",
   "home.betaBanner.badge": "Beta",
   "home.betaBanner.title": "Prueba la {{v}}",
-  "home.betaBanner.text": "Pre-release para pruebas. Puede tener bugs; la descarga por defecto sigue siendo la estable.",
+  "home.betaBanner.text": "Pre-release para pruebas, cliente y servidor. Puede tener bugs; la descarga por defecto sigue siendo la estable.",
   "home.betaBanner.items": [
-    "Antorchas de pared que necesitan soporte",
-    "Cerdos y zombis",
-    "Libro de recetas",
-    "Pestañas en creativo y cantidades",
-    "Sugerencias de comandos y lista con Tab",
-    "Bloques guardados con el mundo, por id"
+    "Los bloques ModLoader son bloques de verdad y se sincronizan en servidores",
+    "Pantalla de muerte y causas reales",
+    "Permisos de servidor, /op, /gamemode para ops",
+    "Tab list configurable",
+    "Pick block como en Minecraft",
+    "Errores de conexión explicados"
   ],
   "home.betaBanner.cta": "Descargar beta",
   "home.betaBanner.notes": "Ver los cambios",

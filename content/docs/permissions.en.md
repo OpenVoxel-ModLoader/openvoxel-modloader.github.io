@@ -10,7 +10,7 @@ OpenVoxel's dedicated server has no permission system of its own. The ModLoader 
 plus the admin tools you expect from a Minecraft server. Everything lives in `plugins/ModLoader/`
 and in the `gameplay` section of `server.properties.yml`.
 
-> The server side of this ships with **1.1.0-pre2** (the next pre-release of ModLoader-Server).
+> Available since **ModLoader-Server 1.1.0-pre2** (pre-release).
 
 ## Operators
 

@@ -69,14 +69,14 @@
   "home.code.api": "API reference",
   "home.betaBanner.badge": "Beta",
   "home.betaBanner.title": "Try {{v}}",
-  "home.betaBanner.text": "Pre-release for testing. It can have bugs; the stable download stays the default.",
+  "home.betaBanner.text": "Pre-release for testing, client and server. It can have bugs; the stable download stays the default.",
   "home.betaBanner.items": [
-    "Wall torches that need support",
-    "Pigs and zombies",
-    "Recipe book",
-    "Creative tabs and stack counts",
-    "Command suggestions and Tab list",
-    "Blocks saved with the world, by id"
+    "ModLoader blocks render as real blocks and sync on servers",
+    "Death screen, real death causes",
+    "Server permissions, /op, /gamemode for ops",
+    "Configurable tab list",
+    "Minecraft-style pick block",
+    "Clearer connection errors"
   ],
   "home.betaBanner.cta": "Download beta",
   "home.betaBanner.notes": "Read the changelog",

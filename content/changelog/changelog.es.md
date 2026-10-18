@@ -6,9 +6,9 @@ order: 9
 
 # Historial de cambios
 
-## Próxima — 1.1.0-pre2 (en desarrollo)
+## 1.1.0-pre2 — 2026-10-18 (cliente + servidor, beta)
 
-Aún no publicada: estos cambios están en los repositorios y saldrán en la próxima pre-release.
+Descargas: [ZIP del cliente](https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre2/ModLoader-Client-v1.1.0-pre2-vgame-0.0.8.zip) · [ZIP del servidor](https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/download/v1.1.0-pre2/ModLoader-Server-v1.1.0-pre2-vgame-0.0.8.zip). Actualiza cliente y servidor a la vez: los modos de juego, los permisos y la tab list necesitan ambos.
 
 **Cliente**
 - Los bloques del ModLoader son **bloques de verdad**: su id va en el estado del bloque, así que el renderizado de chunks los dibuja con la iluminación del mundo, el guardado los conserva y en servidores los ven los demás jugadores con ModLoader. Los bloques de mundos de la 1.1.0-pre1 se actualizan solos.

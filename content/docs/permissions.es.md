@@ -10,7 +10,7 @@ El servidor dedicado de OpenVoxel no tiene sistema de permisos propio. El plugin
 añade uno, además de las herramientas de administración típicas de un servidor de Minecraft. Todo
 vive en `plugins/ModLoader/` y en la sección `gameplay` de `server.properties.yml`.
 
-> La parte de servidor sale con la **1.1.0-pre2** (la próxima pre-release de ModLoader-Server).
+> Disponible desde **ModLoader-Server 1.1.0-pre2** (pre-release).
 
 ## Operadores
 

@@ -12,6 +12,7 @@ export default function Download() {
   const [channel, setChannel] = useState<Channel>('stable');
   const [os, setOs] = useState<Os>(navigator.userAgent.includes('Linux') ? 'linux' : 'windows');
   const rel = channel === 'stable' ? SITE.stable : SITE.beta;
+  const srv = channel === 'stable' ? SITE.stable : SITE.beta;
   const list = (key: string) => t(key, { returnObjects: true }) as string[];
   return (
     <div className="page">
@@ -44,11 +45,10 @@ export default function Download() {
         </article>
 
         <article className="dl-card">
-          <div className="dl-head"><IconServer size={28} /><div><h2>{t('download.server.title')}</h2><span className="muted small">ModLoader {SITE.stable.version} · {t('download.server.official')}</span></div></div>
+          <div className="dl-head"><IconServer size={28} /><div><h2>{t('download.server.title')}</h2><span className="muted small">ModLoader {srv.version} · {t('download.server.official')}</span></div></div>
           <p>{t('download.server.text')}</p>
-          <a className="button big-btn block" href={SITE.stable.server.zip}><IconDownload size={20} /> {t('download.zip')}<small>ModLoader-Server-v{SITE.stable.version}-vgame-{SITE.game}.zip</small></a>
-          <a className="muted small" href={SITE.stable.server.jar}>{t('download.jarOnly')}</a>
-          {channel === 'beta' && <p className="muted small">{t('download.server.noBeta')}</p>}
+          <a className="button big-btn block" href={srv.server.zip}><IconDownload size={20} /> {t('download.zip')}<small>ModLoader-Server-v{srv.version}-vgame-{SITE.game}.zip</small></a>
+          <a className="muted small" href={srv.server.jar}>{t('download.jarOnly')}</a>
           <h3>{t('download.install')}</h3>
           <ol className="steps">{list(`download.server.steps.${os}`).map((s) => <li key={s}><span>{s}</span></li>)}</ol>
           <details><summary>{t('download.contents')}</summary><p className="muted small">{t('download.server.contents')}</p></details>

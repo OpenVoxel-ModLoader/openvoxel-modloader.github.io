@@ -16,7 +16,7 @@ export const SITE = {
   game: GAME,
   launcherVersion: '0.0.8-Debug',
   stable: { version: '1.0.0', client: client('1.0.0'), server: server('1.0.0'), notes: `${ORG}/ModLoader-Client/releases/tag/v1.0.0` },
-  beta: { version: '1.1.0-pre1', client: client('1.1.0-pre1', 'v1.1.0-pre1'), notes: `${ORG}/ModLoader-Client/releases/tag/v1.1.0-pre1` },
+  beta: { version: '1.1.0-pre2', client: client('1.1.0-pre2', 'v1.1.0-pre2'), server: server('1.1.0-pre2', 'v1.1.0-pre2'), notes: `${ORG}/ModLoader-Client/releases/tag/v1.1.0-pre2` },
   template: `${ORG}/ModLoader-ModsExamples/tree/master/mod-template`,
   examples: `${ORG}/ModLoader-ModsExamples`,
   serverExample: `${ORG}/ModLoader-Server-Example`
