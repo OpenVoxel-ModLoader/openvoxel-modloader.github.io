@@ -89,6 +89,33 @@ Built-in items: `wooden|stone|iron|golden|diamond` × `_sword|_pickaxe|_shovel|_
 `bread`, `cooked_beef`, `stick`, `coal`, `copper_ingot`, `iron_ingot`, `gold_ingot`, `diamond`,
 `emerald`, `redstone`, `lapis`, `crafting_table`, `chest`, `bed`.
 
+### Blocks with ids (since 1.1.0)
+
+ModLoader blocks have namespaced ids like Fabric/Minecraft: `modloader:chest`, `modloader:crafting_table`,
+`modloader:bed`, `modloader:oak_planks`, and your own `mymod:ruby_block`.
+
+| Method | Effect |
+|--------|--------|
+| `registerBlock(id, name, baseBlock, texture)` | Registers a textured cube. `texture` is a 16x16 PNG path inside your jar. |
+| `registerBlock(id, name, baseBlock, top, side, bottom, onUse)` | Same with per-face textures and a right-click handler `(x, y, z) -> boolean` (return true to consume the click). |
+| `blockIds()` | Every registered ModLoader block id. |
+| `getBlockId(x, y, z)` | Id of the ModLoader block at a position, or `null` for plain engine blocks. |
+
+```java
+@Override public void onLoad(ModContext ctx) {
+    ctx.registerBlock("mymod:ruby_block", "Ruby Block", "STONE", "assets/mymod/textures/ruby_block.png");
+    ctx.registerRecipe("mymod:ruby_block", 1, new String[]{"DD", "DD"}, "D", "redstone");
+}
+```
+
+How it works: the engine's block list cannot be extended, so a mod block is stored in the world as a real
+engine block (`baseBlock`: collision, mining time, light) plus a ModLoader entry with its id. Entries are
+saved **with the world** (`<world>/modloader/blocks.json`; on servers in
+`instance/config/servers/<host>/blocks.json`) and loaded back by id. If a mod is missing, its blocks are
+skipped (not deleted from the file) and come back when the mod is installed again. The block gets an item
+with the same id for `giveItem`, recipes and the creative inventory (Materials tab). Name it in your lang
+files with `item.mymod.ruby_block`.
+
 ## Engine entry points (the game API)
 
 The whole game (`net.openvoxel.*`) is on the classpath. Most useful classes:

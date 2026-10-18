@@ -3,78 +3,131 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { api, type Mod } from '../api';
 import { ModCard } from '../components/ModCard';
+import { Backdrop } from '../components/Backdrop';
+import { CopyButton } from '../components/CopyButton';
+import { IconBook, IconChat, IconCode, IconCube, IconDownload, IconPalette, IconPlay, IconServer, IconSword } from '../components/Icons';
+import { SITE } from '../site';
 
-const CLIENT_ZIP = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/latest/download/ModLoader-Client-v1.0.0-vgame-0.0.8.zip';
-const SERVER_ZIP = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/latest/download/ModLoader-Server-v1.0.0-vgame-0.0.8.zip';
-const CLIENT_JAR = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/latest/download/ModLoader-v1.0.0-vgame-0.0.8-client.jar';
-const BETA_ZIP = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre1/ModLoader-Client-v1.1.0-pre1-vgame-0.0.8.zip';
-const SERVER_JAR = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/latest/download/ModLoader-v1.0.0-vgame-0.0.8-server.jar';
+const SNIPPET = `public final class HelloMod implements ClientMod {
+    @Override public void onLoad(ModContext ctx) {
+        ctx.registerCommand("hello", "says hi", args -> {
+            ctx.chat("&aHello from my first mod!");
+            ctx.playSound("pop");
+        });
+        ctx.registerBlock("hellomod:ruby_block", "Ruby Block",
+                          "STONE", "assets/hellomod/ruby.png");
+    }
+}`;
 
 export default function Home() {
   const { t } = useTranslation();
   const [mods, setMods] = useState<Mod[]>([]);
-  useEffect(() => { api.mods().then((m) => setMods(m.filter((x) => x.tags.includes('example')).slice(0, 4))).catch(() => setMods([])); }, []);
-  const clientSteps = t('home.client.steps', { returnObjects: true }) as string[];
-  const serverSteps = t('home.server.steps', { returnObjects: true }) as string[];
+  useEffect(() => { api.mods().then((m) => setMods(m.filter((x) => x.tags.includes('example')).slice(0, 3))).catch(() => setMods([])); }, []);
+  const list = (key: string) => t(key, { returnObjects: true }) as string[];
+  const features: { icon: JSX.Element; key: string }[] = [
+    { icon: <IconSword />, key: 'survival' }, { icon: <IconCube />, key: 'crafting' }, { icon: <IconPalette />, key: 'skins' },
+    { icon: <IconChat />, key: 'chat' }, { icon: <IconCode />, key: 'api' }, { icon: <IconServer />, key: 'server' }
+  ];
   return (
     <>
       <section className="hero">
-        <h1>{t('brand')}</h1>
-        <p>{t('tagline')}</p>
-        <p className="muted small">{t('home.version')}</p>
-      </section>
-
-      <section className="downloads">
-        <article className="card download">
-          <h2>{t('home.client.title')}</h2>
-          <p>{t('home.client.text')}</p>
-          <a className="button big" href={CLIENT_ZIP}>{t('home.download.zip')} <small>ModLoader-Client-v1.0.0-vgame-0.0.8.zip</small></a>
-          <a className="muted small" href={CLIENT_JAR}>{t('home.download.jarOnly')}</a>
-          <ol>{clientSteps.map((s, i) => <li key={i}>{s}</li>)}</ol>
-          <p className="muted small">{t('home.client.contains')}</p>
-        </article>
-        <article className="card download">
-          <h2>{t('home.server.title')}</h2>
-          <p>{t('home.server.text')}</p>
-          <a className="button big secondary" href={SERVER_ZIP}>{t('home.download.zip')} <small>ModLoader-Server-v1.0.0-vgame-0.0.8.zip</small></a>
-          <a className="muted small" href={SERVER_JAR}>{t('home.download.jarOnly')}</a>
-          <ol>{serverSteps.map((s, i) => <li key={i}>{s}</li>)}</ol>
-          <p className="muted small">{t('home.server.contains')}</p>
-        </article>
-      </section>
-
-      <section className="card whatsnew">
-        <h2>{t('home.whatsnew')}</h2>
-        <p className="muted small">{t('home.beta.note')}</p>
-        <ul>{(t('home.whatsnewItems', { returnObjects: true }) as string[]).map((s) => <li key={s}>{s}</li>)}</ul>
-        <div className="actions">
-          <a className="button secondary" href={BETA_ZIP}>{t('home.beta.download')} <small>v1.1.0-pre1</small></a>
-          <Link className="muted small" to="/docs/changelog">{t('home.links.changelog')} →</Link>
+        <Backdrop />
+        <div className="hero-inner">
+          <span className="eyebrow">{t('home.eyebrow', { game: SITE.game })}</span>
+          <h1>{t('home.title1')} <span className="grad">{t('home.title2')}</span></h1>
+          <p className="lead">{t('home.lead')}</p>
+          <div className="hero-cta">
+            <Link to="/download" className="button big-btn"><IconDownload size={20} /> {t('home.ctaPlay')}</Link>
+            <Link to="/tutorials/first-mod" className="button ghost big-btn"><IconCode size={20} /> {t('home.ctaDev')}</Link>
+          </div>
+          <div className="badges">
+            <span className="badge ok">{t('home.stable', { v: SITE.stable.version })}</span>
+            <Link to="/docs/changelog" className="badge beta">{t('home.beta', { v: SITE.beta.version })}</Link>
+            <span className="badge">Windows · Linux</span>
+          </div>
         </div>
       </section>
 
-      <section className="features">
-        <h2>{t('home.features.title')}</h2>
-        <div className="grid">
-          {(t('home.features.items', { returnObjects: true }) as { title: string; text: string }[]).map((f) => (
-            <div key={f.title} className="card"><strong>{f.title}</strong><p className="muted">{f.text}</p></div>
-          ))}
+      <section className="page">
+        <h2 className="section-title">{t('home.paths.title')}</h2>
+        <p className="section-sub">{t('home.paths.sub')}</p>
+        <div className="paths">
+          <article className="path-card play">
+            <div className="path-icon"><IconPlay size={28} /></div>
+            <h3>{t('home.paths.play.title')}</h3>
+            <p>{t('home.paths.play.text')}</p>
+            <ol>{list('home.paths.play.steps').map((s) => <li key={s}>{s}</li>)}</ol>
+            <a className="button" href={SITE.stable.client.zip}><IconDownload size={16} /> {t('home.paths.play.cta')}</a>
+          </article>
+          <article className="path-card host">
+            <div className="path-icon"><IconServer size={28} /></div>
+            <h3>{t('home.paths.host.title')}</h3>
+            <p>{t('home.paths.host.text')}</p>
+            <ol>{list('home.paths.host.steps').map((s) => <li key={s}>{s}</li>)}</ol>
+            <a className="button" href={SITE.stable.server.zip}><IconDownload size={16} /> {t('home.paths.host.cta')}</a>
+          </article>
+          <article className="path-card dev">
+            <div className="path-icon"><IconCode size={28} /></div>
+            <h3>{t('home.paths.dev.title')}</h3>
+            <p>{t('home.paths.dev.text')}</p>
+            <ol>{list('home.paths.dev.steps').map((s) => <li key={s}>{s}</li>)}</ol>
+            <Link className="button" to="/tutorials/first-mod"><IconBook size={16} /> {t('home.paths.dev.cta')}</Link>
+          </article>
         </div>
       </section>
 
-      <section>
-        <h2>{t('home.start')}</h2>
-        <div className="actions">
-          <Link className="button" to="/tutorials/first-mod">{t('home.links.firstMod')}</Link>
-          <Link className="button secondary" to="/docs/api">{t('home.links.api')}</Link>
-          <Link className="button secondary" to="/tutorials/server-plugin">{t('home.links.serverPlugin')}</Link>
-          <a className="button secondary" href="https://github.com/OpenVoxel-ModLoader/ModLoader-ModsExamples/tree/master/mod-template" target="_blank" rel="noreferrer">{t('home.links.template')}</a>
+      <section className="band">
+        <div className="page">
+          <h2 className="section-title">{t('home.features.title')}</h2>
+          <div className="features-grid">
+            {features.map((f) => (
+              <div key={f.key} className="feature">
+                <div className="feature-icon">{f.icon}</div>
+                <div><h3>{t(`home.features.${f.key}.title`)}</h3><p>{t(`home.features.${f.key}.text`)}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="page split">
+        <div>
+          <span className="eyebrow">{t('home.code.eyebrow')}</span>
+          <h2>{t('home.code.title')}</h2>
+          <p className="muted">{t('home.code.text')}</p>
+          <ul className="checks">{list('home.code.points').map((s) => <li key={s}>{s}</li>)}</ul>
+          <div className="actions">
+            <Link className="button" to="/tutorials/first-mod">{t('home.code.cta')}</Link>
+            <Link className="button ghost" to="/docs/api">{t('home.code.api')}</Link>
+          </div>
+        </div>
+        <div className="code-window">
+          <div className="code-bar"><i /><i /><i /><span>HelloMod.java</span><CopyButton text={SNIPPET} /></div>
+          <pre><code>{SNIPPET}</code></pre>
+        </div>
+      </section>
+
+      <section className="page">
+        <div className="beta-banner">
+          <div>
+            <span className="badge beta">{t('home.betaBanner.badge')}</span>
+            <h3>{t('home.betaBanner.title', { v: SITE.beta.version })}</h3>
+            <p className="muted">{t('home.betaBanner.text')}</p>
+            <ul className="dots">{list('home.betaBanner.items').map((s) => <li key={s}>{s}</li>)}</ul>
+          </div>
+          <div className="beta-actions">
+            <a className="button" href={SITE.beta.client.zip}><IconDownload size={16} /> {t('home.betaBanner.cta')}</a>
+            <Link className="muted small" to="/docs/changelog">{t('home.betaBanner.notes')} →</Link>
+          </div>
         </div>
       </section>
 
       {mods.length > 0 && (
-        <section>
-          <h2>{t('home.examples')}</h2>
+        <section className="page">
+          <div className="row-head">
+            <h2 className="section-title">{t('home.examples')}</h2>
+            <Link to="/mods" className="muted">{t('home.allMods')} →</Link>
+          </div>
           <div className="grid">{mods.map((m) => <ModCard key={m.id} mod={m} />)}</div>
         </section>
       )}

@@ -88,6 +88,32 @@ Objetos incluidos: `wooden|stone|iron|golden|diamond` × `_sword|_pickaxe|_shove
 `bread`, `cooked_beef`, `stick`, `coal`, `copper_ingot`, `iron_ingot`, `gold_ingot`, `diamond`,
 `emerald`, `redstone`, `lapis`, `crafting_table`, `chest`, `bed`.
 
+### Bloques con id (desde la 1.1.0)
+
+Los bloques del ModLoader tienen id con namespace como en Fabric/Minecraft: `modloader:chest`,
+`modloader:crafting_table`, `modloader:bed`, `modloader:oak_planks`, y los tuyos, como `mimod:bloque_rubi`.
+
+| Método | Efecto |
+|--------|--------|
+| `registerBlock(id, nombre, bloqueBase, textura)` | Registra un cubo con textura. `textura` es la ruta de un PNG 16x16 dentro de tu jar. |
+| `registerBlock(id, nombre, bloqueBase, arriba, lado, abajo, onUse)` | Igual, con textura por cara y un handler de clic derecho `(x, y, z) -> boolean` (true consume el clic). |
+| `blockIds()` | Todos los ids de bloques del ModLoader registrados. |
+| `getBlockId(x, y, z)` | Id del bloque del ModLoader en esa posición, o `null` si es un bloque normal del motor. |
+
+```java
+@Override public void onLoad(ModContext ctx) {
+    ctx.registerBlock("mimod:bloque_rubi", "Bloque de rubí", "STONE", "assets/mimod/textures/bloque_rubi.png");
+    ctx.registerRecipe("mimod:bloque_rubi", 1, new String[]{"DD", "DD"}, "D", "redstone");
+}
+```
+
+Cómo funciona: la lista de bloques del motor no se puede ampliar, así que un bloque de mod se guarda en el mundo
+como un bloque real del motor (`bloqueBase`: colisión, tiempo de minado, luz) más una entrada del ModLoader con su
+id. Las entradas se guardan **con el mundo** (`<mundo>/modloader/blocks.json`; en servidores en
+`instance/config/servers/<host>/blocks.json`) y se cargan por id. Si falta un mod, sus bloques se omiten (no se
+borran del archivo) y vuelven al reinstalarlo. El bloque recibe un objeto con el mismo id para `giveItem`, recetas
+y el inventario creativo (pestaña Materiales). Ponle nombre en tus lang con `item.mimod.bloque_rubi`.
+
 ## Puntos de entrada del motor (la API del juego)
 
 Todo el juego (`net.openvoxel.*`) está en el classpath. Clases más útiles:
