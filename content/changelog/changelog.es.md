@@ -6,6 +6,25 @@ order: 9
 
 # Historial de cambios
 
+## Próxima — 1.1.0-pre2 (en desarrollo)
+
+Aún no publicada: estos cambios están en los repositorios y saldrán en la próxima pre-release.
+
+**Cliente**
+- Los bloques del ModLoader son **bloques de verdad**: su id va en el estado del bloque, así que el renderizado de chunks los dibuja con la iluminación del mundo, el guardado los conserva y en servidores los ven los demás jugadores con ModLoader. Los bloques de mundos de la 1.1.0-pre1 se actualizan solos.
+- Registro de bloques con id con namespace (`modloader:chest`, `mimod:bloque_rubi`) y `ModContext.registerBlock` para mods.
+- Pantalla de muerte con *Reaparecer* / *Menú principal*, causas reales, objetos soltados donde mueres (supervivencia). Reaparecer funciona también con muertes que el servidor no conoce.
+- Pick block (clic central) como en Minecraft: selecciona el slot que ya lo tiene, lo saca del inventario en supervivencia y nunca borra el objeto que tenías.
+- Errores de conexión explicados (otra build del juego, sesión, rechazada, tiempo agotado) y el menú principal muestra la build y el protocolo reales.
+- El menú principal usa el fondo, logo y botones propios de OpenVoxel.
+
+**Servidor**
+- Sistema de permisos: operadores (`/op`, `/deop`, `ops.yml`), nodos por defecto en `permissions.yml`, cada comando protegido por un nodo, `/perms check|reload` y una API `Permissions` pública para plugins (el soporte de LuckPerms se está construyendo sobre ella).
+- `/gamemode` lo decide el servidor para clientes ModLoader (por defecto solo ops).
+- Tab list configurable en `tablist.yml` (cabecera, pie y formato de nombres con prefijos).
+- `server.properties.yml` → `gameplay`: nombre del servidor, mensaje de entrada, modo por defecto, máximo de jugadores y whitelist.
+- `/msg`, `/spawn`, `/setspawn`, `/warp`, `/setwarp`, `/delwarp`, `/warps`, `/whitelist`.
+
 ## 1.1.0-pre1 — 2026-10-18 (cliente, beta)
 
 > Pre-release para pruebas. La 1.1.0 final añadirá la parte de servidor (operadores, `/gamemode` solo para ops, `tablist.yml`, spawn/warps).

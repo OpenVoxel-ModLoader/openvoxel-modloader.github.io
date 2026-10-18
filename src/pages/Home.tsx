@@ -42,7 +42,7 @@ export default function Home() {
           </div>
           <div className="badges">
             <span className="badge ok">{t('home.stable', { v: SITE.stable.version })}</span>
-            <Link to="/docs/changelog" className="badge beta">{t('home.beta', { v: SITE.beta.version })}</Link>
+            <Link to="/changelog" className="badge beta">{t('home.beta', { v: SITE.beta.version })}</Link>
             <span className="badge">Windows · Linux</span>
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function Home() {
           </div>
           <div className="beta-actions">
             <a className="button" href={SITE.beta.client.zip}><IconDownload size={16} /> {t('home.betaBanner.cta')}</a>
-            <Link className="muted small" to="/docs/changelog">{t('home.betaBanner.notes')} →</Link>
+            <Link className="muted small" to="/changelog">{t('home.betaBanner.notes')} →</Link>
           </div>
         </div>
       </section>

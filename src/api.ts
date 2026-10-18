@@ -16,7 +16,9 @@ function parse(kind: string, slug: string, lang: string, text: string): Doc {
   return { slug, lang, title: meta.title ?? slug, summary: meta.summary ?? '', order: Number(meta.order ?? 100), body: match ? text.slice(match[0].length) : text };
 }
 
-function load(kind: 'docs' | 'tutorials', lang: string): Doc[] {
+export type Kind = 'docs' | 'tutorials' | 'changelog';
+
+function load(kind: Kind, lang: string): Doc[] {
   const bySlug = new Map<string, Doc>();
   for (const [path, text] of Object.entries(files)) {
     const m = path.match(/\/content\/([^/]+)\/(.+)\.([a-z]{2})\.md$/);
@@ -38,6 +40,6 @@ export const api = {
       .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
   },
   mod: async (id: string) => { const m = (await api.mods()).find((x) => x.id === id); if (!m) throw new Error('404'); return m; },
-  content: async (kind: 'docs' | 'tutorials', lang: string) => load(kind, lang),
-  doc: async (kind: 'docs' | 'tutorials', slug: string, lang: string) => { const d = load(kind, lang).find((x) => x.slug === slug); if (!d) throw new Error('404'); return d; }
+  content: async (kind: Kind, lang: string) => load(kind, lang),
+  doc: async (kind: Kind, slug: string, lang: string) => { const d = load(kind, lang).find((x) => x.slug === slug); if (!d) throw new Error('404'); return d; }
 };

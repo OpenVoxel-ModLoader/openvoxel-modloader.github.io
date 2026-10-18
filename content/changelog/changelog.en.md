@@ -6,6 +6,25 @@ order: 9
 
 # Changelog
 
+## Next — 1.1.0-pre2 (in development)
+
+Not released yet: these changes are in the source repositories and will ship in the next pre-release.
+
+**Client**
+- ModLoader blocks are **real blocks**: their id is stored in the block state, so the chunk renderer draws them with world lighting, the world save keeps them and other ModLoader players on a server see them. Blocks from 1.1.0-pre1 worlds are upgraded automatically.
+- Block registry with namespaced ids (`modloader:chest`, `mymod:ruby_block`) and `ModContext.registerBlock` for mods.
+- Death screen with *Respawn* / *Title screen*, real death causes, items dropped where you die (survival). Respawn also works for deaths the server does not know about.
+- Pick block (middle click) works like Minecraft: selects the slot that already has the block, takes it from the inventory in survival, never deletes the held item.
+- Clearer connection errors (different game build, session, refused, timeout) and the main menu shows the real launcher build and protocol.
+- Main menu uses OpenVoxel's own backdrop, logo and buttons.
+
+**Server**
+- Permission system: operators (`/op`, `/deop`, `ops.yml`), default nodes in `permissions.yml`, every command protected by a node, `/perms check|reload`, and a public `Permissions` API for plugins (LuckPerms support is being built on it).
+- `/gamemode` is decided by the server for ModLoader clients (ops only by default).
+- Tab list configurable in `tablist.yml` (header, footer, name format with prefixes).
+- `server.properties.yml` → `gameplay`: server name, join message, default game mode, max players, whitelist.
+- `/msg`, `/spawn`, `/setspawn`, `/warp`, `/setwarp`, `/delwarp`, `/warps`, `/whitelist`.
+
 ## 1.1.0-pre1 — 2026-10-18 (client, beta)
 
 > Pre-release for testing. The final 1.1.0 will add the server side (operators, `/gamemode` only for ops, `tablist.yml`, world spawn/warps).

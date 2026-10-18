@@ -10,7 +10,6 @@
   "nav.mods": "Mods",
   "nav.changelog": "Cambios",
   "nav.get": "Descargar",
-
   "home.eyebrow": "Capa de mods no oficial para OpenVoxel {{game}}",
   "home.title1": "Modea OpenVoxel",
   "home.title2": "a tu manera.",
@@ -23,15 +22,27 @@
   "home.paths.sub": "Elige un camino: cada uno se prepara en pocos minutos.",
   "home.paths.play.title": "Jugar con mods",
   "home.paths.play.text": "Supervivencia, crafteo, cofres, skins con las dos capas, colores en el chat y los mods que instales.",
-  "home.paths.play.steps": ["Descarga el ZIP del cliente", "Descomprímelo junto a OpenVoxelLauncher.exe", "Ejecuta launch.bat (o launch.sh) y elige 0.0.8-Debug"],
+  "home.paths.play.steps": [
+    "Descarga el ZIP del cliente",
+    "Descomprímelo junto a OpenVoxelLauncher.exe",
+    "Ejecuta launch.bat (o launch.sh) y elige 0.0.8-Debug"
+  ],
   "home.paths.play.cta": "ZIP del cliente",
   "home.paths.host.title": "Montar un servidor",
   "home.paths.host.text": "El servidor dedicado oficial con consola interactiva, colores, comandos de administración y plugins.",
-  "home.paths.host.steps": ["Descarga el ZIP del servidor", "Pon el jar oficial del servidor en server/", "Copia plugins en mods/ y ejecuta start.bat"],
+  "home.paths.host.steps": [
+    "Descarga el ZIP del servidor",
+    "Pon el jar oficial del servidor en server/",
+    "Copia plugins en mods/ y ejecuta start.bat"
+  ],
   "home.paths.host.cta": "ZIP del servidor",
   "home.paths.dev.title": "Crear mods",
   "home.paths.dev.text": "Una API Java pequeña: comandos, bloques con id, objetos, recetas, HUD y eventos. Incluye plantilla Gradle.",
-  "home.paths.dev.steps": ["Copia la plantilla de mod", "Escribe una clase ClientMod", "Compila el jar en instance/mods"],
+  "home.paths.dev.steps": [
+    "Copia la plantilla de mod",
+    "Escribe una clase ClientMod",
+    "Compila el jar en instance/mods"
+  ],
   "home.paths.dev.cta": "Tutorial del primer mod",
   "home.features.title": "Todo lo que esperas, en OpenVoxel",
   "home.features.survival.title": "Supervivencia y Creativo",
@@ -49,18 +60,28 @@
   "home.code.eyebrow": "Para desarrolladores",
   "home.code.title": "Tu primer mod en pocas líneas",
   "home.code.text": "Los mods son jars Java normales en instance/mods. Sin código del juego, sin parches, sin configurar Maven.",
-  "home.code.points": ["Hooks: onLoad, onGameReady, onFrame, onShutdown", "Bloques y objetos con id como mimod:bloque_rubi", "Traducciones, configuración por mod y sonidos incluidos"],
+  "home.code.points": [
+    "Hooks: onLoad, onGameReady, onFrame, onShutdown",
+    "Bloques y objetos con id como mimod:bloque_rubi",
+    "Traducciones, configuración por mod y sonidos incluidos"
+  ],
   "home.code.cta": "Empezar el tutorial",
   "home.code.api": "Referencia de la API",
   "home.betaBanner.badge": "Beta",
   "home.betaBanner.title": "Prueba la {{v}}",
   "home.betaBanner.text": "Pre-release para pruebas. Puede tener bugs; la descarga por defecto sigue siendo la estable.",
-  "home.betaBanner.items": ["Antorchas de pared que necesitan soporte", "Cerdos y zombis", "Libro de recetas", "Pestañas en creativo y cantidades", "Sugerencias de comandos y lista con Tab", "Bloques guardados con el mundo, por id"],
+  "home.betaBanner.items": [
+    "Antorchas de pared que necesitan soporte",
+    "Cerdos y zombis",
+    "Libro de recetas",
+    "Pestañas en creativo y cantidades",
+    "Sugerencias de comandos y lista con Tab",
+    "Bloques guardados con el mundo, por id"
+  ],
   "home.betaBanner.cta": "Descargar beta",
   "home.betaBanner.notes": "Ver los cambios",
   "home.examples": "Mods de ejemplo",
   "home.allMods": "Todos los mods",
-
   "download.title": "Descargar",
   "download.sub": "ZIPs listos para usar con scripts de arranque para Windows y Linux. En el launcher oficial elige la versión {{launcher}}.",
   "download.channel": "Canal",
@@ -75,21 +96,46 @@
   "download.notes": "Notas de la versión",
   "download.client.title": "Cliente",
   "download.client.text": "Juega a OpenVoxel con el ModLoader: supervivencia, crafteo, skins, chat y tus mods.",
-  "download.client.steps.windows": ["Descomprime ModLoader-Client junto a OpenVoxelLauncher.exe", "Haz doble clic en launch.bat (o ejecuta launch.ps1)", "En el launcher elige 0.0.8-Debug y pulsa PLAY", "Pon los mods en ModLoader-Client\\instance\\mods"],
-  "download.client.steps.linux": ["Descomprime ModLoader-Client junto al launcher", "Ejecuta ./launch.sh (define OPENVOXEL_HOME si el launcher está en otro sitio)", "En el launcher elige 0.0.8-Debug y pulsa PLAY", "Pon los mods en ModLoader-Client/instance/mods"],
+  "download.client.steps.windows": [
+    "Descomprime ModLoader-Client junto a OpenVoxelLauncher.exe",
+    "Haz doble clic en launch.bat (o ejecuta launch.ps1)",
+    "En el launcher elige 0.0.8-Debug y pulsa PLAY",
+    "Pon los mods en ModLoader-Client\\instance\\mods"
+  ],
+  "download.client.steps.linux": [
+    "Descomprime ModLoader-Client junto al launcher",
+    "Ejecuta ./launch.sh (define OPENVOXEL_HOME si el launcher está en otro sitio)",
+    "En el launcher elige 0.0.8-Debug y pulsa PLAY",
+    "Pon los mods en ModLoader-Client/instance/mods"
+  ],
   "download.client.contents": "El jar del loader, launch.bat / launch.ps1 / launch.sh y la carpeta instance: mods, config, lang, resourcepacks, sounds, music.",
   "download.server.title": "Servidor",
   "download.server.official": "servidor oficial",
   "download.server.text": "Ejecuta el servidor dedicado oficial con consola, colores, comandos de admin y plugins.",
   "download.server.noBeta": "El servidor aún no tiene beta: el servidor estable funciona con el cliente beta.",
-  "download.server.steps.windows": ["Descomprime ModLoader-Server donde quieras", "Copia openvoxel-server-0.0.8-SNAPSHOT.jar a server\\openvoxel-server.jar", "Pon los plugins en mods\\", "Haz doble clic en start.bat y escribe help en la consola"],
-  "download.server.steps.linux": ["Descomprime ModLoader-Server donde quieras", "Copia openvoxel-server-0.0.8-SNAPSHOT.jar a server/openvoxel-server.jar", "Pon los plugins en mods/", "Ejecuta ./start.sh y escribe help en la consola"],
+  "download.server.steps.windows": [
+    "Descomprime ModLoader-Server donde quieras",
+    "Copia openvoxel-server-0.0.8-SNAPSHOT.jar a server\\openvoxel-server.jar",
+    "Pon los plugins en mods\\",
+    "Haz doble clic en start.bat y escribe help en la consola"
+  ],
+  "download.server.steps.linux": [
+    "Descomprime ModLoader-Server donde quieras",
+    "Copia openvoxel-server-0.0.8-SNAPSHOT.jar a server/openvoxel-server.jar",
+    "Pon los plugins en mods/",
+    "Ejecuta ./start.sh y escribe help en la consola"
+  ],
   "download.server.contents": "El jar del plugin núcleo, start.bat / start.ps1 / start.sh, server.properties.yml y las carpetas mods, plugins, server y logs.",
   "download.req.title": "Requisitos",
-  "download.req.items": ["OpenVoxel instalado con el launcher oficial", "Versión 0.0.8-Debug descargada en el launcher", "Windows 10/11 o Linux (x64)", "Java viene incluido con el juego", "Para crear mods: JDK 11 o superior"],
+  "download.req.items": [
+    "OpenVoxel instalado con el launcher oficial",
+    "Versión 0.0.8-Debug descargada en el launcher",
+    "Windows 10/11 o Linux (x64)",
+    "Java viene incluido con el juego",
+    "Para crear mods: JDK 11 o superior"
+  ],
   "download.req.more": "¿Necesitas ayuda?",
   "download.req.guide": "Guía de inicio",
-
   "mods.sub": "El loader, mods de ejemplo y plantillas. Aquí aparecerán más mods a medida que la comunidad los publique.",
   "mods.search": "Buscar mods…",
   "mods.all": "Todos",
@@ -102,7 +148,6 @@
   "mods.updated": "Actualizado",
   "mods.install": "Los mods de cliente van en ModLoader-Client/instance/mods; los plugins de servidor en ModLoader-Server/mods.",
   "mods.submit": "¿Has hecho un mod? Abre un issue o pull request en GitHub para añadirlo a la lista.",
-
   "content.empty": "Página no encontrada.",
   "content.read": "Leer",
   "content.docsSub": "Referencia para jugadores, dueños de servidores y desarrolladores de mods.",
@@ -115,7 +160,6 @@
   "content.next": "Siguiente",
   "content.copy": "Copiar",
   "content.copied": "Copiado",
-
   "footer.about": "Capa de mods no oficial para OpenVoxel. Funciona desde el launcher oficial; los archivos del juego y del launcher nunca se modifican.",
   "footer.players": "Jugadores",
   "footer.install": "Guía de instalación",
@@ -127,5 +171,101 @@
   "footer.template": "Plantilla de mod",
   "footer.project": "Proyecto",
   "footer.issues": "Reportar un bug",
-  "footer.legal": "OpenVoxel ModLoader es un proyecto de la comunidad, no afiliado a los desarrolladores de OpenVoxel. Licencia MIT."
+  "footer.legal": "OpenVoxel ModLoader es un proyecto de la comunidad, no afiliado a los desarrolladores de OpenVoxel. Licencia MIT.",
+  "nav.servers": "Servidores",
+  "changelog.title": "Historial de cambios",
+  "changelog.sub": "Cada versión del ModLoader y qué cambió. Las pre-releases son betas para probar.",
+  "changelog.releases": "Todas las versiones en GitHub",
+  "changelog.tag.next": "En desarrollo",
+  "changelog.tag.beta": "Pre-release",
+  "changelog.tag.stable": "Estable",
+  "servers.eyebrow": "Para dueños de servidores",
+  "servers.title": "Monta un servidor ModLoader",
+  "servers.sub": "Permisos, operadores, modos de juego, una tab list configurable y los comandos de admin que esperas, sobre el servidor dedicado oficial de OpenVoxel.",
+  "servers.download": "ZIP del servidor",
+  "servers.docs": "Guía de permisos",
+  "servers.f.perms.title": "Permisos y operadores",
+  "servers.f.perms.text": "/op y /deop, un nodo para cada comando, permisos por defecto en permissions.yml, /perms check.",
+  "servers.f.gamemode.title": "Modos de juego en el servidor",
+  "servers.f.gamemode.text": "Con el cliente ModLoader el servidor decide quién puede usar creativo; el modo se recuerda por jugador.",
+  "servers.f.tab.title": "Tab list",
+  "servers.f.tab.text": "Cabecera, pie y formato de nombres con placeholders y prefijos de permisos en tablist.yml.",
+  "servers.f.whitelist.title": "Whitelist, plazas y warps",
+  "servers.f.whitelist.text": "Whitelist, máximo de jugadores, mensaje de entrada, spawn del mundo y warps.",
+  "servers.f.api.title": "API de permisos",
+  "servers.f.api.text": "Permissions.has(jugador, nodo) para tus plugins y una interfaz de proveedor para sistemas de permisos.",
+  "servers.f.luckperms.title": "LuckPerms (en desarrollo)",
+  "servers.f.luckperms.text": "Grupos, tracks, prefijos y editor web mediante un port de LuckPerms para OpenVoxel.",
+  "servers.how.title": "Primeros pasos",
+  "servers.how.steps": [
+    "Descarga el ZIP del servidor y añade el jar oficial",
+    "Arráncalo y escribe op TuNombre en la consola",
+    "Da a todos los nodos que quieras en plugins/ModLoader/permissions.yml",
+    "Edita tablist.yml y la sección gameplay de server.properties.yml",
+    "Aplica los cambios con /perms reload"
+  ],
+  "servers.nodes.title": "Nodos de permiso principales",
+  "servers.nodes.node": "Nodo",
+  "servers.nodes.what": "Permite",
+  "servers.nodes.default": "Por defecto",
+  "servers.nodes.rows": [
+    [
+      "openvoxel.command.help",
+      "/help, /list, /version",
+      "todos"
+    ],
+    [
+      "openvoxel.command.msg",
+      "/msg, /tell",
+      "todos"
+    ],
+    [
+      "openvoxel.command.spawn / warp",
+      "/spawn, /warp, /warps",
+      "todos"
+    ],
+    [
+      "openvoxel.command.gamemode",
+      "Cambiar tu modo de juego",
+      "ops"
+    ],
+    [
+      "openvoxel.command.gamemode.others",
+      "/gamemode <modo> <jugador>",
+      "ops"
+    ],
+    [
+      "openvoxel.command.op",
+      "/op, /deop",
+      "ops"
+    ],
+    [
+      "openvoxel.command.kick / say / stop",
+      "Comandos de admin",
+      "ops"
+    ],
+    [
+      "openvoxel.command.whitelist",
+      "/whitelist",
+      "ops"
+    ],
+    [
+      "openvoxel.command.setwarp",
+      "/setspawn, /setwarp, /delwarp",
+      "ops"
+    ],
+    [
+      "openvoxel.command.<nombre>",
+      "Cualquier otro comando",
+      "ops"
+    ]
+  ],
+  "servers.roadmap.badge": "Hoja de ruta",
+  "servers.roadmap.title": "Lo próximo para servidores",
+  "servers.roadmap.items": [
+    "LuckPerms para OpenVoxel (grupos, tracks, editor web)",
+    "Contenido de cofres y bloques ModLoader sincronizados para todos",
+    "Bloques nativos registrados en cliente y servidor",
+    "Un proxy (estilo BungeeCord/Velocity) para unir varios servidores"
+  ]
 }
