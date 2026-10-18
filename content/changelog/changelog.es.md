@@ -6,6 +6,11 @@ order: 9
 
 # Historial de cambios
 
+## Próxima — en desarrollo
+
+**Cliente**
+- **Permitir trucos** por mundo de un jugador, como en Minecraft: con los trucos desactivados, `/give` y los cambios de modo de juego están bloqueados. Se cambia en el menú de pausa (Esc); se guarda en la carpeta del mundo y empieza desactivado.
+
 ## 1.1.0-pre3 — 2026-10-18 (cliente + servidor, beta)
 
 Descargas: [ZIP cliente](https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre3/ModLoader-Client-v1.1.0-pre3-vgame-0.0.8.zip) · [ZIP servidor](https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/download/v1.1.0-pre3/ModLoader-Server-v1.1.0-pre3-vgame-0.0.8.zip). Los mods con bloques nativos deben instalarse también en el servidor (`mods/`, con el agente en `agent/`).

@@ -6,6 +6,11 @@ order: 9
 
 # Changelog
 
+## Next — in development
+
+**Client**
+- **Allow cheats** per singleplayer world, like Minecraft: with cheats off, `/give` and game mode changes are blocked. Toggle it in the pause menu (Esc); it is saved in the world folder and starts off.
+
 ## 1.1.0-pre3 — 2026-10-18 (client + server, beta)
 
 Downloads: [client ZIP](https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre3/ModLoader-Client-v1.1.0-pre3-vgame-0.0.8.zip) · [server ZIP](https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/download/v1.1.0-pre3/ModLoader-Server-v1.1.0-pre3-vgame-0.0.8.zip). Mods with native blocks must be installed on the server too (`mods/`, with the agent in `agent/`).
