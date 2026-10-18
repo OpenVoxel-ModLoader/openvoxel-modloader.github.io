@@ -11,7 +11,7 @@
     ],
     "download": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/latest/download/ModLoader-Client-v1.0.0-vgame-0.0.8.zip",
     "repo": "https://github.com/OpenVoxel-ModLoader/ModLoader-Client",
-    "updatedAt": "2026-10-12T00:00:00.000Z",
+    "updatedAt": "2026-10-18T00:00:00.000Z",
     "readme": "# ModLoader client\n\nDownload `ModLoader-Client-v1.0.0-vgame-0.0.8.zip`, unzip it next to `OpenVoxelLauncher.exe` and run `launch.bat` / `launch.ps1` / `launch.sh`. In the launcher select **0.0.8-Debug**. Mods go into `ModLoader-Client/instance/mods`."
   },
   {

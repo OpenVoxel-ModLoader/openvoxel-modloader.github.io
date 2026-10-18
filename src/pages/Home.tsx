@@ -7,6 +7,7 @@ import { ModCard } from '../components/ModCard';
 const CLIENT_ZIP = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/latest/download/ModLoader-Client-v1.0.0-vgame-0.0.8.zip';
 const SERVER_ZIP = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/latest/download/ModLoader-Server-v1.0.0-vgame-0.0.8.zip';
 const CLIENT_JAR = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/latest/download/ModLoader-v1.0.0-vgame-0.0.8-client.jar';
+const BETA_ZIP = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre1/ModLoader-Client-v1.1.0-pre1-vgame-0.0.8.zip';
 const SERVER_JAR = 'https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/latest/download/ModLoader-v1.0.0-vgame-0.0.8-server.jar';
 
 export default function Home() {
@@ -40,6 +41,16 @@ export default function Home() {
           <ol>{serverSteps.map((s, i) => <li key={i}>{s}</li>)}</ol>
           <p className="muted small">{t('home.server.contains')}</p>
         </article>
+      </section>
+
+      <section className="card whatsnew">
+        <h2>{t('home.whatsnew')}</h2>
+        <p className="muted small">{t('home.beta.note')}</p>
+        <ul>{(t('home.whatsnewItems', { returnObjects: true }) as string[]).map((s) => <li key={s}>{s}</li>)}</ul>
+        <div className="actions">
+          <a className="button secondary" href={BETA_ZIP}>{t('home.beta.download')} <small>v1.1.0-pre1</small></a>
+          <Link className="muted small" to="/docs/changelog">{t('home.links.changelog')} →</Link>
+        </div>
       </section>
 
       <section className="features">

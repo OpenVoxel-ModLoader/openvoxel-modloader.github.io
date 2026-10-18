@@ -18,7 +18,7 @@
   "content.read": "Read",
   "lang": "Language",
   "footer": "OpenVoxel ModLoader is a community project. Not affiliated with open-voxel.net.",
-  "home.version": "Current release: ModLoader 1.0.0 for OpenVoxel 0.0.8 (launcher version 0.0.8-Debug). Windows & Linux.",
+  "home.version": "Stable: ModLoader 1.0.0 for OpenVoxel 0.0.8 (launcher version 0.0.8-Debug). Beta: 1.1.0-pre1. Windows & Linux.",
   "home.download.zip": "Download ZIP",
   "home.download.jarOnly": "jar only (for an existing install)",
   "home.client.title": "Client",
@@ -70,5 +70,17 @@
   "home.links.api": "API reference",
   "home.links.serverPlugin": "Server plugin tutorial",
   "home.links.template": "Mod template (Gradle)",
-  "home.examples": "Example mods"
+  "home.examples": "Example mods",
+  "home.whatsnew": "Beta 1.1.0-pre1 — try the next update",
+  "home.whatsnewItems": [
+    "Wall torches that need support and pop off like Minecraft",
+    "Mobs: pigs and zombies (client-side) with combat and drops",
+    "Recipe book in the inventory and crafting table",
+    "Creative inventory with icon tabs and stack counts",
+    "Tab player list and Minecraft-style command suggestions",
+    "Fix: menu buttons on maximized/fullscreen windows"
+  ],
+  "home.links.changelog": "Changelog",
+  "home.beta.note": "Pre-release for testing: it can have bugs. The server side of 1.1.0 (operators, tablist.yml, warps) comes with the final release.",
+  "home.beta.download": "Download beta (client ZIP)"
 }

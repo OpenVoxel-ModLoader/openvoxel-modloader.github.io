@@ -67,3 +67,6 @@ dt { color: var(--muted); }
 .download > a.small { display: inline-block; margin: 8px 0 0; }
 .features { margin: 10px 0 30px; }
 .features .card p { margin: 6px 0 0; }
+
+.whatsnew { margin-bottom: 30px; }
+.whatsnew ul { margin: 8px 0 10px; padding-left: 20px; line-height: 1.7; }
