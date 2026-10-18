@@ -79,15 +79,11 @@ header:                       # a list: one line per item
   - '&b&lOpenVoxel &f&lServer'
   - '&7Welcome, &e{player}'
   - ''
-footer: '
-&7Online: &a{online}&7/&a{max}
-&8ModLoader {version}'   # or one text with 
-
+footer: '\n&7Online: &a{online}&7/&a{max}\n&8ModLoader {version}'   # o un texto con \n
 name-format: '{prefix}{player}{suffix}'
 ```
 
-`header` y `footer` pueden ser una **lista** (una línea por elemento, `''` para una línea vacía) o un texto donde `
-` empieza una línea nueva.
+`header` y `footer` pueden ser una **lista** (una línea por elemento, `''` para una línea vacía) o un texto donde `\n` empieza una línea nueva.
 
 Placeholders: `{online}` `{max}` `{player}` `{prefix}` `{suffix}` `{server}` `{version}` `{provider}`.
 `{prefix}` y `{suffix}` vienen del plugin de permisos (meta de LuckPerms) cuando hay uno instalado.
@@ -101,7 +97,8 @@ Placeholders: `{online}` `{max}` `{player}` `{prefix}` `{suffix}` `{server}` `{v
 ```yaml
 gameplay:
   server-name: OpenVoxel
-  motd: '&7Welcome, &e{player}&7! Type &a/help&7.'
+  motd: '&bAn OpenVoxel server\n&7running &eModLoader'   # texto en la lista de servidores (clientes ModLoader, necesita el agente); dos líneas con \n
+  welcome-message: '&7Welcome, &e{player}&7! Type &a/help&7.'   # mensaje de chat al entrar un jugador
   default-gamemode: survival
   max-players: 20          # 0 = sin límite, los operadores siempre pueden entrar
   whitelist: false
@@ -118,7 +115,7 @@ Whitelist: `/whitelist add <jugador>`, `/whitelist remove <jugador>`, `/whitelis
 ## Para desarrolladores de plugins
 
 ```java
-import com.happyuky7.openvoxelmoding.server.core.Permissions;
+import com.happyuky7.openvoxelmoding.server.permissions.Permissions;
 
 if (!Permissions.has(player, "myplugin.fly")) { player.sendMessage("&cNo tienes permiso."); return; }
 Permissions.registerCommand("fly", "myplugin.fly");   // ahora /fly necesita myplugin.fly

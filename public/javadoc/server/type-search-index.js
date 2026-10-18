@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"com.happyuky7.openvoxelmoding.server.core","l":"Permissions"},{"p":"com.happyuky7.openvoxelmoding.server.core","l":"Permissions.Provider","k":"10"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"com.happyuky7.openvoxelmoding.server.permissions","l":"Permissions"},{"p":"com.happyuky7.openvoxelmoding.server.permissions","l":"Permissions.Provider","k":"10"}];updateSearchResults();

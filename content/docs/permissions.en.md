@@ -79,15 +79,11 @@ header:                       # a list: one line per item
   - '&b&lOpenVoxel &f&lServer'
   - '&7Welcome, &e{player}'
   - ''
-footer: '
-&7Online: &a{online}&7/&a{max}
-&8ModLoader {version}'   # or one text with 
-
+footer: '\n&7Online: &a{online}&7/&a{max}\n&8ModLoader {version}'   # or one text with \n
 name-format: '{prefix}{player}{suffix}'
 ```
 
-`header` and `footer` can be a **list** (one line per item, `''` for an empty line) or one text where `
-` starts a new line.
+`header` and `footer` can be a **list** (one line per item, `''` for an empty line) or one text where `\n` starts a new line.
 
 Placeholders: `{online}` `{max}` `{player}` `{prefix}` `{suffix}` `{server}` `{version}` `{provider}`.
 `{prefix}` and `{suffix}` come from the permission plugin (LuckPerms meta) when one is installed.
@@ -101,7 +97,8 @@ Placeholders: `{online}` `{max}` `{player}` `{prefix}` `{suffix}` `{server}` `{v
 ```yaml
 gameplay:
   server-name: OpenVoxel
-  motd: '&7Welcome, &e{player}&7! Type &a/help&7.'
+  motd: '&bAn OpenVoxel server\n&7running &eModLoader'   # server list text (ModLoader clients, needs the agent); two lines with \n
+  welcome-message: '&7Welcome, &e{player}&7! Type &a/help&7.'   # chat message when a player joins
   default-gamemode: survival
   max-players: 20          # 0 = unlimited, operators can always join
   whitelist: false
@@ -118,7 +115,7 @@ Whitelist: `/whitelist add <player>`, `/whitelist remove <player>`, `/whitelist 
 ## For plugin developers
 
 ```java
-import com.happyuky7.openvoxelmoding.server.core.Permissions;
+import com.happyuky7.openvoxelmoding.server.permissions.Permissions;
 
 if (!Permissions.has(player, "myplugin.fly")) { player.sendMessage("&cNo permission."); return; }
 Permissions.registerCommand("fly", "myplugin.fly");   // /fly now needs myplugin.fly

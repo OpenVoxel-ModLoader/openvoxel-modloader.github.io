@@ -6,7 +6,9 @@ order: 9
 
 # Historial de cambios
 
-## Próxima — 1.1.0-pre3 (en desarrollo)
+## 1.1.0-pre3 — 2026-10-18 (cliente + servidor, beta)
+
+Descargas: [ZIP cliente](https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre3/ModLoader-Client-v1.1.0-pre3-vgame-0.0.8.zip) · [ZIP servidor](https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/download/v1.1.0-pre3/ModLoader-Server-v1.1.0-pre3-vgame-0.0.8.zip). Los mods con bloques nativos deben instalarse también en el servidor (`mods/`, con el agente en `agent/`).
 
 **Mods**
 - **Bloques nativos**: `ctx.nativeBlock("mimod:bloque_rubi")...register()` añade tipos de bloque reales del motor (registro al estilo Fabric/Forge): texturas, luz, translucidez, gravedad, dureza y herramientas; ids deterministas compartidos por cliente y servidor.
@@ -17,9 +19,14 @@ order: 9
 - **/give** funciona como en Minecraft: los objetos van al inventario (se juntan), lo que sobra cae a tus pies, el objeto de la mano no se reemplaza y la cantidad llega a 2304; en servidores ModLoader necesita `openvoxel.command.give` (`.others` para otros jugadores).
 - La plantilla de mod ya no llena el chat con la posición del jugador (ahora tiene un comando `/where`).
 
+- El autocompletado con Tab sugiere los valores correctos para cada argumento (antes repetía la lista del primero).
+- La lista de servidores muestra el **MOTD** de cada servidor ModLoader (dos líneas con colores) y su máximo real de jugadores.
+- Código reorganizado en paquetes (`core`, `ui`, `item`, `world`, `net`...); la API de mods sigue en `com.happyuky7.openvoxelmoding.loader`, así que los mods siguen funcionando.
+
 **Servidor**
-- `header`/`footer` de la tab list pueden ser listas YAML o texto con `
-`: varias líneas cada uno.
+- `gameplay.motd` ahora es el texto de la lista de servidores, como en Minecraft; el mensaje al entrar pasa a `gameplay.welcome-message` (las configuraciones antiguas siguen funcionando).
+- **Cambio incompatible para plugins**: `Permissions` se movió a `com.happyuky7.openvoxelmoding.server.permissions.Permissions`. El código está dividido en paquetes (`command`, `listener`, `tablist`, `config`...).
+- `header`/`footer` de la tab list pueden ser listas YAML o texto con `\n`: varias líneas cada uno.
 - `/give [jugador] <objeto> [cantidad]` con permisos.
 - Los scripts de arranque cargan el agente desde `agent/` y solo despliegan a `plugins/` los jars de `mods/` con `plugin.yml`.
 

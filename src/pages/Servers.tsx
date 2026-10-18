@@ -25,7 +25,7 @@ footer:
   - '&7Online: &a{online}&7/&a{max}'
 name-format: '{prefix}{player}{suffix}'`;
 
-const API = `import com.happyuky7.openvoxelmoding.server.core.Permissions;
+const API = `import com.happyuky7.openvoxelmoding.server.permissions.Permissions;
 
 if (!Permissions.has(player, "myplugin.fly")) {
     player.sendMessage("&cNo permission.");

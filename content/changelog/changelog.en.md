@@ -6,7 +6,9 @@ order: 9
 
 # Changelog
 
-## Next — 1.1.0-pre3 (in development)
+## 1.1.0-pre3 — 2026-10-18 (client + server, beta)
+
+Downloads: [client ZIP](https://github.com/OpenVoxel-ModLoader/ModLoader-Client/releases/download/v1.1.0-pre3/ModLoader-Client-v1.1.0-pre3-vgame-0.0.8.zip) · [server ZIP](https://github.com/OpenVoxel-ModLoader/ModLoader-Server/releases/download/v1.1.0-pre3/ModLoader-Server-v1.1.0-pre3-vgame-0.0.8.zip). Mods with native blocks must be installed on the server too (`mods/`, with the agent in `agent/`).
 
 **Mods**
 - **Native blocks**: `ctx.nativeBlock("mymod:ruby_block")...register()` adds real engine block types (Fabric/Forge-style registration): textures, light, translucency, gravity, hardness and tools; deterministic type ids shared by client and server.
@@ -17,9 +19,14 @@ order: 9
 - **/give** works like Minecraft: items go into the inventory (stacking), the rest drops at your feet, the held item is never replaced, counts up to 2304; on ModLoader servers it needs `openvoxel.command.give` (`.others` for other players).
 - The mod template no longer spams the chat with the player position (it has a `/where` command instead).
 
+- Tab completion suggests the right values for every argument (it used to repeat the first argument's list).
+- The server list shows each ModLoader server's **MOTD** (two colored lines) and its real max players.
+- Code reorganized into packages (`core`, `ui`, `item`, `world`, `net`...); the mod API stays in `com.happyuky7.openvoxelmoding.loader`, so mods keep working.
+
 **Server**
-- Tab list `header`/`footer` can be YAML lists or text with `
-`: several lines each.
+- `gameplay.motd` is now the server list text, like Minecraft; the join message moved to `gameplay.welcome-message` (old configs keep working).
+- **Breaking for plugins**: `Permissions` moved to `com.happyuky7.openvoxelmoding.server.permissions.Permissions`. The code is split into packages (`command`, `listener`, `tablist`, `config`...).
+- Tab list `header`/`footer` can be YAML lists or text with `\n`: several lines each.
 - `/give [player] <item> [count]` with permissions.
 - Start scripts load the agent from `agent/` and only deploy jars with `plugin.yml` from `mods/` to `plugins/`.
 
