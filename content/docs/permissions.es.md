@@ -55,6 +55,8 @@ Admite comodines: `openvoxel.command.*` o `*`. Aplica los cambios con `/perms re
 | `openvoxel.command.kick`, `say`, `heal`, `stop`, `whitelist` | Comandos de admin | ops |
 | `openvoxel.command.setspawn`, `setwarp`, `delwarp` | Editar spawn y warps | ops |
 | `openvoxel.command.perms` | `/perms check <jugador> <nodo>`, `/perms reload` | ops |
+| `openvoxel.command.give` | `/give <objeto> [cantidad]` para ti | ops |
+| `openvoxel.command.give.others` | `/give <jugador> <objeto> [cantidad]` | ops |
 
 Si a un jugador le falta el nodo verá `You don't have permission to use /nombre (nodo)`, y `/help`
 solo lista los comandos que puede usar. Los clientes ModLoader reciben también esa lista filtrada para autocompletar con Tab.
@@ -73,13 +75,26 @@ Los jugadores con el cliente ModLoader la ven manteniendo **Tab**. Se configura 
 ```yaml
 enabled: true
 refresh-seconds: 2
-header: '&b&lOpenVoxel &f&lServer'
-footer: '&7Online: &a{online}&7/&a{max}'
+header:                       # a list: one line per item
+  - '&b&lOpenVoxel &f&lServer'
+  - '&7Welcome, &e{player}'
+  - ''
+footer: '
+&7Online: &a{online}&7/&a{max}
+&8ModLoader {version}'   # or one text with 
+
 name-format: '{prefix}{player}{suffix}'
 ```
 
+`header` y `footer` pueden ser una **lista** (una línea por elemento, `''` para una línea vacía) o un texto donde `
+` empieza una línea nueva.
+
 Placeholders: `{online}` `{max}` `{player}` `{prefix}` `{suffix}` `{server}` `{version}` `{provider}`.
 `{prefix}` y `{suffix}` vienen del plugin de permisos (meta de LuckPerms) cuando hay uno instalado.
+
+## /give
+
+`/give [jugador] <objeto> [cantidad]` mete los objetos en el inventario, juntándolos con los que ya tiene. Lo que no cabe cae al suelo a sus pies; el objeto de la mano nunca se reemplaza. La cantidad puede llegar a 2304 (un inventario lleno). Los objetos son del cliente, así que el destino necesita el cliente ModLoader. En un jugador `/give` siempre funciona; en servidores sin el plugin ModLoader solo en creativo.
 
 ## server.properties.yml → gameplay
 

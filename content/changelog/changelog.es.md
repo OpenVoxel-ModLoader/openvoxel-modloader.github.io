@@ -14,7 +14,13 @@ order: 9
 - `registerRecipe` / `registerBlock` se pueden usar en `onLoad` (se aplican cuando el juego está listo).
 - Javadoc completo de la API pública, publicado en [javadoc/client](javadoc/client/index.html) y [javadoc/server](javadoc/server/index.html).
 
+- **/give** funciona como en Minecraft: los objetos van al inventario (se juntan), lo que sobra cae a tus pies, el objeto de la mano no se reemplaza y la cantidad llega a 2304; en servidores ModLoader necesita `openvoxel.command.give` (`.others` para otros jugadores).
+- La plantilla de mod ya no llena el chat con la posición del jugador (ahora tiene un comando `/where`).
+
 **Servidor**
+- `header`/`footer` de la tab list pueden ser listas YAML o texto con `
+`: varias líneas cada uno.
+- `/give [jugador] <objeto> [cantidad]` con permisos.
 - Los scripts de arranque cargan el agente desde `agent/` y solo despliegan a `plugins/` los jars de `mods/` con `plugin.yml`.
 
 ## 1.1.0-pre2 — 2026-10-18 (cliente + servidor, beta)

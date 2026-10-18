@@ -17,8 +17,12 @@ commands:                     # command -> node
 const TABLIST_YML = `# plugins/ModLoader/tablist.yml
 enabled: true
 refresh-seconds: 2
-header: '&b&lOpenVoxel &f&lServer'
-footer: '&7Online: &a{online}&7/&a{max}'
+header:
+  - '&b&lOpenVoxel &f&lServer'
+  - '&7Welcome, &e{player}'
+footer:
+  - ''
+  - '&7Online: &a{online}&7/&a{max}'
 name-format: '{prefix}{player}{suffix}'`;
 
 const API = `import com.happyuky7.openvoxelmoding.server.core.Permissions;

@@ -55,6 +55,8 @@ Wildcards work: `openvoxel.command.*` or `*`. Apply changes with `/perms reload`
 | `openvoxel.command.kick`, `say`, `heal`, `stop`, `whitelist` | Admin commands | ops |
 | `openvoxel.command.setspawn`, `setwarp`, `delwarp` | Edit spawn and warps | ops |
 | `openvoxel.command.perms` | `/perms check <player> <node>`, `/perms reload` | ops |
+| `openvoxel.command.give` | `/give <item> [count]` to yourself | ops |
+| `openvoxel.command.give.others` | `/give <player> <item> [count]` | ops |
 
 When a player lacks a node they see `You don't have permission to use /name (node)`, and `/help`
 only lists the commands they can use. ModLoader clients also get that filtered list for Tab completion.
@@ -73,13 +75,26 @@ Players with the ModLoader client hold **Tab** to see it. Configure it in `plugi
 ```yaml
 enabled: true
 refresh-seconds: 2
-header: '&b&lOpenVoxel &f&lServer'
-footer: '&7Online: &a{online}&7/&a{max}'
+header:                       # a list: one line per item
+  - '&b&lOpenVoxel &f&lServer'
+  - '&7Welcome, &e{player}'
+  - ''
+footer: '
+&7Online: &a{online}&7/&a{max}
+&8ModLoader {version}'   # or one text with 
+
 name-format: '{prefix}{player}{suffix}'
 ```
 
+`header` and `footer` can be a **list** (one line per item, `''` for an empty line) or one text where `
+` starts a new line.
+
 Placeholders: `{online}` `{max}` `{player}` `{prefix}` `{suffix}` `{server}` `{version}` `{provider}`.
 `{prefix}` and `{suffix}` come from the permission plugin (LuckPerms meta) when one is installed.
+
+## /give
+
+`/give [player] <item> [count]` puts items in the inventory, stacking with what the player already has. What does not fit is dropped at their feet; the held item is never replaced. The count can go up to 2304 (a full inventory). Items are client-side, so the target needs the ModLoader client. In singleplayer `/give` always works; on servers without the ModLoader plugin only in creative.
 
 ## server.properties.yml → gameplay
 

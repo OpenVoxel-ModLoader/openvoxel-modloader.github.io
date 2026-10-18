@@ -14,7 +14,13 @@ order: 9
 - `registerRecipe` / `registerBlock` are safe in `onLoad` (applied when the game is ready).
 - Complete Javadoc for the public API, published at [javadoc/client](javadoc/client/index.html) and [javadoc/server](javadoc/server/index.html).
 
+- **/give** works like Minecraft: items go into the inventory (stacking), the rest drops at your feet, the held item is never replaced, counts up to 2304; on ModLoader servers it needs `openvoxel.command.give` (`.others` for other players).
+- The mod template no longer spams the chat with the player position (it has a `/where` command instead).
+
 **Server**
+- Tab list `header`/`footer` can be YAML lists or text with `
+`: several lines each.
+- `/give [player] <item> [count]` with permissions.
 - Start scripts load the agent from `agent/` and only deploy jars with `plugin.yml` from `mods/` to `plugins/`.
 
 ## 1.1.0-pre2 — 2026-10-18 (client + server, beta)
